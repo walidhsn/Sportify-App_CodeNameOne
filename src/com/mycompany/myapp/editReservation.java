@@ -87,7 +87,7 @@ public class editReservation extends Form {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 removeAll();
-                new displayTerrains(theme).show();
+                new myReservation(theme).show();
             }
         };
         getToolbar().addCommandToLeftBar(back);

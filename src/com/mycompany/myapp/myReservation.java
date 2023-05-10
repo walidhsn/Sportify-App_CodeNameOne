@@ -128,10 +128,10 @@ public class myReservation extends Form {
             view.setUIID("IconButton");
             edit.setUIID("IconButton");
             delete.setUIID("IconButton");
-
+            final float total_form = total_price;
             card_btn.addActionListener(e -> {
-
-                //paymentProcess
+                removeAll();
+                new PaymentForm(theme, total_form, reservation).show();
             });
 
             view.addActionListener(e -> {

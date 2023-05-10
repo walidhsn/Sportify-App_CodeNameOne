@@ -95,7 +95,31 @@ public class ServiceReservation {
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
     }
-
+    public void UpdateReservation_payment(Reservation reservation) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat datetimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        String url = Statics.BASE_URL + "/reservationApiModifier/" + reservation.getId() + "?dateReservation=" + dateFormat.format(reservation.getDateReservation()) + "&startTime=" + datetimeFormat.format(reservation.getStartTime()) + "&endTime=" + datetimeFormat.format(reservation.getEndTime()) + "&nbPerson=" + String.valueOf(reservation.getNbPerson())+"&resStatus="+String.valueOf(reservation.isResStatus());
+        req.setUrl(url);
+        req.addResponseListener((evt) -> {
+            String response = new String(req.getResponseData());
+            System.out.println("Reservation Modifiée: " + response);
+            if (req.getResponseCode() == 400) {
+                // handle error response
+                String errorMessage = "";
+                try {
+                    JSONParser parser = new JSONParser();
+                    Map<String, Object> result = parser.parseJSON(new CharArrayReader(response.toCharArray()));
+                    errorMessage = (String) result.get("message");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println(errorMessage);
+            } else if (req.getResponseCode() == 200) {
+                System.out.println("The Reservation Has been Updated at the Selected Date and Time.");
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+    }
     public void DeleteReservation(int id_reservation) {
 
         String url = Statics.BASE_URL + "/reservationApiSupprimer/" + id_reservation;

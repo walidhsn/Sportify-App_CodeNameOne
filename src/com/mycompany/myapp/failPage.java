@@ -12,21 +12,19 @@ import com.codename1.ui.Label;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
-import com.mycompany.entities.Reservation;
 
 /**
  *
  * @author WALID
  */
-public class successPage extends Form {
-
+public class failPage extends Form{
     private Button backButton;
 
-    public successPage(Resources theme, Reservation reservation) {
-        super("Successful Payment");
+    public failPage(Resources theme) {
+        super("Payment Failed");
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         getStyle().setBgColor(0x343a40);  // Set the background color of the Form
-        Label message = new Label("This confirms that we've just received your online payment for your Reservation.");
+        Label message = new Label("There's an Error in your online payment for your Reservation.");
         add(message);
         backButton = new Button("Back To List");
         backButton.addActionListener(e -> {
@@ -44,5 +42,4 @@ public class successPage extends Form {
         };
         getToolbar().addCommandToLeftBar(back);
     }
-
 }
