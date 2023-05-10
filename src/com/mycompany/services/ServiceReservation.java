@@ -70,14 +70,14 @@ public class ServiceReservation {
         NetworkManager.getInstance().addToQueueAndWait(req);
     }
 
-    public void UpdareReservation(Reservation reservation) {
+    public void UpdateReservation(Reservation reservation) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat datetimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        String url = Statics.BASE_URL + "/reservationApiModifier/" + reservation.getId() + "?dateReservation=" + dateFormat.format(reservation.getDateReservation()) + "&startTime=" + datetimeFormat.format(reservation.getStartTime()) + "&endTime=" + datetimeFormat.format(reservation.getEndTime()) + "&nbPerson=" + String.valueOf(reservation.getNbPerson());
+        String url = Statics.BASE_URL + "/reservationApiModifier/" + reservation.getId() + "?dateReservation=" + dateFormat.format(reservation.getDateReservation()) + "&startTime=" + datetimeFormat.format(reservation.getStartTime()) + "&endTime=" + datetimeFormat.format(reservation.getEndTime()) + "&nbPerson=" + String.valueOf(reservation.getNbPerson())+"&resStatus="+String.valueOf(reservation.isResStatus());
         req.setUrl(url);
         req.addResponseListener((evt) -> {
             String response = new String(req.getResponseData());
-            System.out.println("Reservation ajoutée: " + response);
+            System.out.println("Reservation Modifiée: " + response);
             if (req.getResponseCode() == 400) {
                 // handle error response
                 String errorMessage = "";
@@ -90,7 +90,7 @@ public class ServiceReservation {
                 }
                 Dialog.show("Error", errorMessage, "OK", null);
             } else if (req.getResponseCode() == 200) {
-                Dialog.show("Success", "The Terrain Has been Reserved at the Selected Date and Time.", "OK", null);
+                Dialog.show("Success", "The Reservation Has been Updated at the Selected Date and Time.", "OK", null);
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
@@ -112,6 +112,7 @@ public class ServiceReservation {
             Dialog.show("Error", "it seems there's an error at deleting this Reservation", "OK", null);
         }
     }
+
     public ArrayList<Reservation> afficherReservation_idClient(int id_user) {
         ArrayList<Reservation> result = new ArrayList<>();
         String url = Statics.BASE_URL + "/reservationApiAfficherIdUser/" + id_user;
@@ -128,18 +129,24 @@ public class ServiceReservation {
                     if (listOfMaps != null) {
                         for (Map<String, Object> obj : listOfMaps) {
                             Reservation r = new Reservation();
-                            float id = Float.parseFloat(obj.get("id").toString());                 
+                            float id = Float.parseFloat(obj.get("id").toString());
                             Double doubleValue = Double.parseDouble(obj.get("nbPerson").toString());
                             int nbperson = (int) Math.round(doubleValue);
                             SimpleDateFormat dateFormat_d = new SimpleDateFormat("yyyy-MM-dd");
-                            String date_Res = obj.get("dateReservation").toString();          
+                            String date_Res = obj.get("dateReservation").toString();
                             Date dateReservation = dateFormat_d.parse(date_Res);
                             String starttime = obj.get("startTime").toString();
                             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                             Date startTime = dateFormat.parse(starttime);
-                            String endtime = obj.get("endTime").toString();          
-                            Date endTime = dateFormat.parse(starttime);
+                            String endtime = obj.get("endTime").toString();
+                            Date endTime = dateFormat.parse(endtime);
                             boolean resStatus = Boolean.parseBoolean(obj.get("resStatus").toString());
+
+                            // Retrieve terrain_id and client_id from the embedded JSON objects
+                            Map<String, Object> terrainObj = (Map<String, Object>) obj.get("terrain");
+                            int terrain_id = (int) Float.parseFloat(terrainObj.get("id").toString());
+                            Map<String, Object> clientObj = (Map<String, Object>) obj.get("client");
+                            int client_id = (int) Float.parseFloat(clientObj.get("id").toString());
 
                             // setting the values :
                             r.setId((int) id);
@@ -148,6 +155,8 @@ public class ServiceReservation {
                             r.setStartTime(startTime);
                             r.setEndTime(endTime);
                             r.setResStatus(resStatus);
+                            r.setTerrain_id(terrain_id); // Set the terrain_id property
+                            r.setClient_id(client_id); // Set the client_id property
                             result.add(r);
                         }
                     }

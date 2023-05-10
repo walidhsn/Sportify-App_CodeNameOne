@@ -45,6 +45,7 @@ public class ReservationForm extends Form {
         super("Reservation Form");
 
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
+        getStyle().setBgColor(0x343a40); 
         c1 = new Container(new FlowLayout(LEFT));
         c2 = new Container(new FlowLayout(LEFT));
         c3 = new Container(new FlowLayout(LEFT));

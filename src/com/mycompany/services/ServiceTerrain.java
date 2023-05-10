@@ -164,6 +164,7 @@ public class ServiceTerrain {
                 jsonp = new JSONParser();
                 try {
                     String strData = new String(req.getResponseData(), "UTF-8");
+
                     Map<String, Object> mapTerrains = jsonp.parseJSON(new StringReader(strData));
                     List<Map<String, Object>> listOfMaps = (List<Map<String, Object>>) mapTerrains.get("root");
                     if (listOfMaps != null) {
@@ -219,60 +220,5 @@ public class ServiceTerrain {
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
         return result;
-    }
-
-    public Terrain DetailTerrain(int id) throws UnsupportedEncodingException {
-        Terrain t = new Terrain();
-        String url = Statics.BASE_URL + "/terrainApiAfficher/" + id;
-        req.setUrl(url);
-        String strData = new String(req.getResponseData(), "UTF-8");
-        req.addResponseListener((a)
-                -> {
-            JSONParser jsonp = new JSONParser();
-            try {
-                Map<String, Object> obj = jsonp.parseJSON(new StringReader(strData));
-                String name = obj.get("name").toString();
-                double doubleValue = Double.parseDouble(obj.get("capacity").toString());
-                int capacity = (int) Math.round(doubleValue);
-                String sportType = obj.get("sportType").toString();
-                Double p = Double.parseDouble(obj.get("rentPrice").toString());
-                float rentPrice = p.floatValue();
-                boolean disponibility = Boolean.parseBoolean(obj.get("disponibility").toString());
-                doubleValue = Double.parseDouble(obj.get("postalCode").toString());
-                int postalCode = (int) Math.round(doubleValue);
-                String roadName = obj.get("roadName").toString();
-                doubleValue = Double.parseDouble(obj.get("roadNumber").toString());
-                int roadNumber = (int) Math.round(doubleValue);
-                String city = obj.get("city").toString();
-                String country = obj.get("country").toString();
-                String imageName = obj.get("imageName").toString();
-                String updatedAtStr = obj.get("updatedAt").toString();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                Date updatedAt = dateFormat.parse(updatedAtStr);
-                String imageUrl = obj.get("image_url").toString();
-
-                // setting the values :
-                t.setId(id);
-                t.setName(name);
-                t.setCapacity(capacity);
-                t.setSportType(sportType);
-                t.setRentPrice(rentPrice);
-                t.setDisponibility(disponibility);
-                t.setRentPrice(rentPrice);
-                t.setPostalCode(postalCode);
-                t.setRoadName(roadName);
-                t.setRoadNumber(roadNumber);
-                t.setCity(city);
-                t.setCountry(country);
-                t.setImageName(imageName);
-                t.setUpdatedAt(updatedAt);
-                t.setImageUrl(imageUrl);
-            } catch (Exception ex) {
-                System.out.println("Error related to sql :" + ex.getMessage());
-            }
-            System.out.println("Data === " + strData);
-        });
-        NetworkManager.getInstance().addToQueueAndWait(req);
-        return t;
     }
 }

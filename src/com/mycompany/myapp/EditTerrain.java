@@ -40,6 +40,7 @@ public class EditTerrain extends Form{
     private Terrain terrain;
     public EditTerrain(Resources theme,Terrain t) throws UnsupportedEncodingException {
         super("Edit Terrain", BoxLayout.y());
+        getStyle().setBgColor(0x343a40);
         this.terrain = new Terrain();
         this.terrain = t;
         Label nameLabel = new Label("Name:");
@@ -51,7 +52,7 @@ public class EditTerrain extends Form{
         String country = terrain.getCountry();
         String roadname = terrain.getRoadName();
         String roadNumber = String.valueOf(terrain.getRoadNumber());
-        nameField = new TextField("", "Terrain Name", 60, TextField.ANY);
+        nameField = new TextField("", "Terrain Name", 50, TextField.ANY);
         Label sportTypeLabel = new Label("Sport Type:");
         sportTypeField = new ComboBox<>();
         for( String item : types){
@@ -66,7 +67,7 @@ public class EditTerrain extends Form{
         Label postalCodeLabel = new Label("Postal Code:");
         postalCodeField = new TextField("", "Code Postal", 8, TextField.NUMERIC);
         Label roadNameLabel = new Label("Road Name:");
-        roadNameField = new TextField("", "Road Name", 70, TextField.ANY);
+        roadNameField = new TextField("", "Road Name", 50, TextField.ANY);
         Label roadNumberLabel = new Label("Road Number:");
         roadNumberField = new TextField("", "Road Nubmer", 5, TextField.NUMERIC);
         Label cityLabel = new Label("City:");

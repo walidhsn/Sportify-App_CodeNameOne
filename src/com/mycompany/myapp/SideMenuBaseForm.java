@@ -75,7 +75,7 @@ public abstract class SideMenuBaseForm extends Form {
         }
         if (SharedComponents.user.getRoles().contains("ROLE_CLIENT")) {
             getToolbar().addMaterialCommandToSideMenu("  Explore Terrains", FontImage.MATERIAL_LIST, e -> new displayTerrains(res).show());
-            getToolbar().addMaterialCommandToSideMenu("  My Reservations", FontImage.MATERIAL_LIST, e -> showOtherForm(res));
+            getToolbar().addMaterialCommandToSideMenu("  My Reservations", FontImage.MATERIAL_LIST, e -> new myReservation(res).show());
         }
 //        getToolbar().addMaterialCommandToSideMenu("  Activity", FontImage.MATERIAL_TRENDING_UP,  e -> showOtherForm(res));
         getToolbar().addMaterialCommandToSideMenu("  Account Settings", FontImage.MATERIAL_SETTINGS, e -> showOtherForm(res));

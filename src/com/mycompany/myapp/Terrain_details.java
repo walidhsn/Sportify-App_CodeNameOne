@@ -34,6 +34,7 @@ public class Terrain_details extends Form {
         super("Terrain Details");
 
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
+        getStyle().setBgColor(0x343a40);
         // Create a ComponentGroup to hold the labels
         ComponentGroup labelGroup = new ComponentGroup();
         labelGroup.setLayout(new BoxLayout(BoxLayout.Y_AXIS));

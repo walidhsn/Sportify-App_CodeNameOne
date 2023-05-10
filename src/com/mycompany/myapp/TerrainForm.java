@@ -39,8 +39,9 @@ public class TerrainForm extends Form {
 
     public TerrainForm(Resources theme) {
         super("Add Terrain", BoxLayout.y());
+        getStyle().setBgColor(0x343a40);
         Label nameLabel = new Label("Name:");
-        nameField = new TextField("", "Terrain Name", 60, TextField.ANY);
+        nameField = new TextField("", "Terrain Name", 50, TextField.ANY);
         Label sportTypeLabel = new Label("Sport Type:");
         sportTypeField = new ComboBox<>();
         sportTypeField.addItem("football");
@@ -59,7 +60,7 @@ public class TerrainForm extends Form {
         Label postalCodeLabel = new Label("Postal Code:");
         postalCodeField = new TextField("", "Code Postal", 8, TextField.NUMERIC);
         Label roadNameLabel = new Label("Road Name:");
-        roadNameField = new TextField("", "Road Name", 70, TextField.ANY);
+        roadNameField = new TextField("", "Road Name", 50, TextField.ANY);
         Label roadNumberLabel = new Label("Road Number:");
         roadNumberField = new TextField("", "Road Nubmer", 5, TextField.NUMERIC);
         Label cityLabel = new Label("City:");

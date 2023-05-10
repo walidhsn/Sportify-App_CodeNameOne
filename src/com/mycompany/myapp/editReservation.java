@@ -44,6 +44,7 @@ public class editReservation extends Form {
         super("Reservation Form");
 
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
+        getStyle().setBgColor(0x343a40);
         c1 = new Container(new FlowLayout(LEFT));
         c2 = new Container(new FlowLayout(LEFT));
         c3 = new Container(new FlowLayout(LEFT));
@@ -77,7 +78,7 @@ public class editReservation extends Form {
         // Create a container for the submit button and text field
         Container submitContainer = new Container();
         submitContainer.setLayout(new BoxLayout(BoxLayout.Y_AXIS));
-        submitButton = new Button("Book");
+        submitButton = new Button("Update");
         submitButton.setUIID("LoginButton");
         submitContainer.addComponent(submitButton);
 
@@ -132,8 +133,8 @@ public class editReservation extends Form {
                     reservation.setStartTime(startDate);
                     reservation.setEndTime(endDate);
                     reservation.setNbPerson(numPeople);
-
-                    ServiceReservation.getInstance().UpdareReservation(reservation);
+                    reservation.setResStatus(reservation.isResStatus());
+                    ServiceReservation.getInstance().UpdateReservation(reservation);
                     iDialog.dispose();
                     refreshTheme();
                     removeAll();
