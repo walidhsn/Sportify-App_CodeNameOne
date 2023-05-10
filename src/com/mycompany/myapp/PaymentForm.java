@@ -89,11 +89,9 @@ public class PaymentForm extends Form {
                 Dialog.show("Error", "Please enter a valid CVC Number.", "OK", null);
             } else {
                 try {
-                    InfiniteProgress ip = new InfiniteProgress();
-                    final Dialog iDialog = ip.showInfiniteBlocking();
+                    
                     boolean payment_result = PaymentProcessor.processPayment(name, email, total, cardNumber, month, year, cvc);
-                    iDialog.dispose();
-                    refreshTheme();
+                    
                     if (payment_result) {
                         Dialog.show("Success", "Successful Payment.", "OK", null);
                         reservation.setResStatus(true);

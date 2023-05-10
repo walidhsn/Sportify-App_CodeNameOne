@@ -65,6 +65,7 @@ public class successPage extends Form {
             //init twilio
             Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
             String send_number = "+216" + String.valueOf(phone);
+            System.out.println(send_number);
             String from_number = "+15075650863";
             String body = "Sportify: Thank you for making a reservation with us! We look forward to seeing you on : ";
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
