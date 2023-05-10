@@ -16,6 +16,7 @@
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
  */
+
 package com.mycompany.myapp;
 
 import com.codename1.components.ToastBar;
@@ -27,8 +28,8 @@ import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.Layout;
 import com.codename1.ui.util.Resources;
-import com.mycompany.shared.SharedComponents;
-import com.mycompany.myapp.DisplayUsers;
+import forms.Admin_InterfaceForm;
+import forms.Client_CtegoryForm;
 
 /**
  * Common code that can setup the side menu
@@ -51,36 +52,26 @@ public abstract class SideMenuBaseForm extends Form {
     public SideMenuBaseForm(Layout contentPaneLayout) {
         super(contentPaneLayout);
     }
-
+    
     public void setupSideMenu(Resources res) {
-        Image profilePic = res.getImage("userpic.png");
+        Image profilePic = res.getImage("user-picture.jpg");
         Image mask = res.getImage("round-mask.png");
         mask = mask.scaledHeight(mask.getHeight() / 4 * 3);
         profilePic = profilePic.fill(mask.getWidth(), mask.getHeight());
-        Label profilePicLabel = new Label(SharedComponents.user.getFirstname() + " " + SharedComponents.user.getLastname(), profilePic, "SideMenuTitle");
+        Label profilePicLabel = new Label("  Jennifer Wilson", profilePic, "SideMenuTitle");
         profilePicLabel.setMask(mask.createMask());
 
         Container sidemenuTop = BorderLayout.center(profilePicLabel);
         sidemenuTop.setUIID("SidemenuTop");
+        
         getToolbar().addComponentToSideMenu(sidemenuTop);
-
-        if (SharedComponents.user.getRoles().contains("ROLE_ADMIN")) {
-            getToolbar().addMaterialCommandToSideMenu("  Dashboard", FontImage.MATERIAL_DASHBOARD, e -> new DashboardForm());
-            getToolbar().addMaterialCommandToSideMenu("  Users", FontImage.MATERIAL_ADMIN_PANEL_SETTINGS, e -> new DisplayUsers(res));
-        }
-        if (SharedComponents.user.getRoles().contains("ROLE_OWNER")) {
-            getToolbar().addMaterialCommandToSideMenu("  Add Propriety", FontImage.MATERIAL_ADD, e -> new TerrainForm(res).show());
-            getToolbar().addMaterialCommandToSideMenu("  My Proprieties", FontImage.MATERIAL_LIST, e -> new ownerList(res).show());
-            
-        }
-        if (SharedComponents.user.getRoles().contains("ROLE_CLIENT")) {
-            getToolbar().addMaterialCommandToSideMenu("  Explore Terrains", FontImage.MATERIAL_LIST, e -> new displayTerrains(res).show());
-            getToolbar().addMaterialCommandToSideMenu("  My Reservations", FontImage.MATERIAL_LIST, e -> new myReservation(res).show());
-        }
-//        getToolbar().addMaterialCommandToSideMenu("  Activity", FontImage.MATERIAL_TRENDING_UP,  e -> showOtherForm(res));
-        getToolbar().addMaterialCommandToSideMenu("  Account Settings", FontImage.MATERIAL_SETTINGS, e -> showOtherForm(res));
-        getToolbar().addMaterialCommandToSideMenu("  Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new LoginForm(res).show());
+       
+        getToolbar().addMaterialCommandToSideMenu("  Dashboard", FontImage.MATERIAL_DASHBOARD,  e -> showOtherForm(res));
+        getToolbar().addMaterialCommandToSideMenu("  Activity", FontImage.MATERIAL_TRENDING_UP,  e -> showOtherForm(res));
+        getToolbar().addMaterialCommandToSideMenu("  Tasks", FontImage.MATERIAL_ACCESS_TIME,  e -> showOtherForm(res));
+        getToolbar().addMaterialCommandToSideMenu("  Account Settings", FontImage.MATERIAL_SETTINGS,  e -> showOtherForm(res));
+        getToolbar().addMaterialCommandToSideMenu("  Logout", FontImage.MATERIAL_EXIT_TO_APP,  e -> new LoginForm(res).show());
     }
-
+    
     protected abstract void showOtherForm(Resources res);
 }

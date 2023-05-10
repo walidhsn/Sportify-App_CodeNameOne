@@ -4,18 +4,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/ServiceTerrain.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/entities/Reservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/ServiceReservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/displayTerrains.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/editReservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/myReservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/ownerList.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/SideMenuBaseForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/display_Reservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/ReservationForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/TerrainForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/EditTerrain.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Admin_SupplierForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Client_EquipmentFOrm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/com/mycompany/myapp/LoginForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Client_CtegoryForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Admin_RentForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/services/Category_Service.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/com/mycompany/myapp/SideMenuBaseForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Client_RentForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/models/category.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/utils/DataSource.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Admin_CategoryForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Admin_EquipmentForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/Main/MyApplication.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/com/mycompany/myapp/ProfileForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/utils/Statics.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/forms/Admin_InterfaceForm.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/services/Supplier_Service.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/services/Equipment_Service.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/models/rent.java</file>
+            <file>file:/C:/Users/MOLKA/OneDrive/Bureau/Sportify%20Mobile/Sportify_app/src/services/Rent_Service.java</file>
         </group>
     </open-files>
 </project-private>
