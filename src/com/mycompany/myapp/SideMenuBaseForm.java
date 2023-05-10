@@ -36,7 +36,8 @@ import com.mycompany.myapp.DisplayUsers;
  * @author Shai Almog
  */
 public abstract class SideMenuBaseForm extends Form {
-
+    
+    protected Resources theme;
     public SideMenuBaseForm(String title, Layout contentPaneLayout) {
         super(title, contentPaneLayout);
     }
@@ -71,6 +72,8 @@ public abstract class SideMenuBaseForm extends Form {
         if (SharedComponents.user.getRoles().contains("ROLE_OWNER")) {
             getToolbar().addMaterialCommandToSideMenu("  Add Propriety", FontImage.MATERIAL_ADD, e -> new TerrainForm(res).show());
             getToolbar().addMaterialCommandToSideMenu("  My Proprieties", FontImage.MATERIAL_LIST, e -> new ownerList(res).show());
+            getToolbar().addMaterialCommandToSideMenu("  Academy", FontImage.MATERIAL_TRENDING_UP,  e -> new AcademyForm(this, theme).show());
+            getToolbar().addMaterialCommandToSideMenu("  Coach", FontImage.MATERIAL_TRENDING_UP,  e -> new CoachForm(this, theme).show());
             
         }
         if (SharedComponents.user.getRoles().contains("ROLE_CLIENT")) {

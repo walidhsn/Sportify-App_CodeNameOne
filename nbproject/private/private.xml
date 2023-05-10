@@ -4,28 +4,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/ServiceTerrain.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/ProfileForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/displayTerrains.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/RegisterService.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/ownerList.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/SideMenuBaseForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/MyApplication.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/entities/Terrain.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/UserService.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/ReservationForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/entities/Reservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/SessionManager.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/ServiceReservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/editReservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/services/AuthService.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/myReservation.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/LoginForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/shared/SharedComponents.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/utils/Statics.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/TerrainForm.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/Terrain_details.java</file>
-            <file>file:/C:/Users/WALID/Desktop/moataz/Sportify_app/src/com/mycompany/myapp/EditTerrain.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/SideMenuBaseForm.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/Terrain_details.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/ReservationForm.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/myReservation.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/ownerList.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/services/ServiceTerrain.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/TerrainForm.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/utils/Statics.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/editReservation.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/SignUpForm.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/MyApplication.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/EditTerrain.java</file>
+            <file>file:/C:/Users/ramib/Desktop/Study/Pidev/Mobile/Sportify-App_CodeNameOne/src/com/mycompany/myapp/displayTerrains.java</file>
         </group>
     </open-files>
 </project-private>
