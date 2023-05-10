@@ -7,6 +7,7 @@ package com.mycompany.myapp;
 
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
+import com.codename1.ui.Font;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.events.ActionEvent;
@@ -17,14 +18,17 @@ import com.codename1.ui.util.Resources;
  *
  * @author WALID
  */
-public class failPage extends Form{
+public class failPage extends Form {
+
     private Button backButton;
 
     public failPage(Resources theme) {
         super("Payment Failed");
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         getStyle().setBgColor(0x343a40);  // Set the background color of the Form
+        Font largeBoldSystemFont = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_LARGE);
         Label message = new Label("There's an Error in your online payment for your Reservation.");
+        message.getUnselectedStyle().setFont(largeBoldSystemFont);
         add(message);
         backButton = new Button("Back To List");
         backButton.addActionListener(e -> {
