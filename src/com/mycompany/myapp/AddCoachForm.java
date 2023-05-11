@@ -24,10 +24,13 @@ import com.mycompany.services.CoachService;
 
 public class AddCoachForm extends Form {
     private CoachService coachService = CoachService.getInstance();
+    private AcademyService academyService = AcademyService.getInstance();
     private CoachForm previous;
     private TextField nameField;
     private TextField emailField;
     private TextField phoneField;
+    private ComboBox<String> academyComboBox;
+    
 
     public AddCoachForm(CoachForm previous, Resources theme) {
         this.previous = previous;
@@ -48,6 +51,10 @@ public class AddCoachForm extends Form {
 //        emailField = new TextField("", "Email", 20, TextField.ANY);
         phoneField = new TextField("", "Phone", 20, TextField.PHONENUMBER);
 //        phoneField = new TextField("", "Phone", 20, TextField.ANY);
+        academyComboBox = new ComboBox<>("");
+
+            // Call the method to add items to the ComboBox
+            addAcademiesToComboBox();
 
         Button addButton = new Button("Add");
         addButton.addActionListener(e -> {
@@ -67,6 +74,7 @@ public class AddCoachForm extends Form {
                 previous.showBack();
             }
         });
+        
 
         Container formContainer = new Container(new BoxLayout(BoxLayout.Y_AXIS));
         formContainer.getStyle().setMarginTop(20);
@@ -76,8 +84,14 @@ public class AddCoachForm extends Form {
         formContainer.add(nameField);
         formContainer.add(emailField);
         formContainer.add(phoneField);
+        formContainer.add(academyComboBox);
         formContainer.add(addButton);
 
         add(BorderLayout.CENTER, formContainer);
+    }
+    private void addAcademiesToComboBox() {
+        for (Academy academy : academyService.getAllAcademies()) {
+            academyComboBox.addItem(academy.getName());
+        }
     }
 }

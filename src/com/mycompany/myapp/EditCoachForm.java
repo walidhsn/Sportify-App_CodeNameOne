@@ -11,7 +11,9 @@ import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import static com.codename1.ui.events.ActionEvent.Type.Theme;
 import com.codename1.ui.layouts.BoxLayout;
+import com.mycompany.entities.Academy;
 import com.mycompany.entities.Coach;
+import com.mycompany.services.AcademyService;
 import com.mycompany.services.CoachService;
 
 
@@ -21,6 +23,8 @@ public class EditCoachForm extends Form {
     private TextField nameField;
     private TextField emailField;
     private TextField phoneField;
+    private AcademyService academyService = AcademyService.getInstance();
+    private ComboBox<String> academyComboBox;
     
     public EditCoachForm(Form previous, CoachService service, Coach coach) {
         setTitle("Edit Coach");
@@ -35,6 +39,10 @@ public class EditCoachForm extends Form {
         TextField name = new TextField("", coach.getName());
         TextField email = new TextField("", coach.getEmail());
         TextField phone = new TextField("", coach.getPhone());
+        academyComboBox = new ComboBox<>("");
+
+            // Call the method to add items to the ComboBox
+            addAcademiesToComboBox();
 
         Button saveButton = new Button("Save");
         saveButton.addActionListener(e -> {
@@ -52,6 +60,11 @@ public class EditCoachForm extends Form {
             previous.showBack();
         });
 
-        addAll(name, email, phone, saveButton);
+        addAll(name, email, phone, academyComboBox, saveButton);
+    }
+    private void addAcademiesToComboBox() {
+        for (Academy academy : academyService.getAllAcademies()) {
+            academyComboBox.addItem(academy.getName());
+        }
     }
 }

@@ -113,7 +113,7 @@ public class CoachService {
     }
     
     public boolean addCoach(Coach a) {
-        String url = baseUrl + "add?name=" + a.getName()+ "&email=" + a.getEmail()+ "&telephone=" + a.getPhone();
+        String url = baseUrl + "add?name=" + a.getName()+ "&email=" + a.getEmail()+ "&telephone=" + a.getPhone() + "&created_by=" + "front";
         req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override

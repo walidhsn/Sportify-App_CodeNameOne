@@ -19,6 +19,7 @@ public class Academy {
     private int id ;
     private String name,category,image;
     private EncodedImage imageUrl;
+    private String created_by;
     
     public Academy() {
     // Empty constructor
@@ -36,16 +37,22 @@ public class Academy {
         this.image = image;
     }
 
+    public Academy(String name, String category, String created_by) {
+        this.name = name;
+        this.category = category;
+        this.created_by = created_by;
+    }
+    
     public Academy(String name, String category) {
         this.name = name;
         this.category = category;
     }
     
-    public Academy(String name, String category, String image) {
-        this.name = name;
-        this.category = category;
-        this.image = image;
-    }
+//    public Academy(String name, String category, String image) {
+//        this.name = name;
+//        this.category = category;
+//        this.image = image;
+//    }
 
     public int getId() {
         return id;
@@ -77,6 +84,14 @@ public class Academy {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(String created_by) {
+        this.created_by = created_by;
     }
     
     public EncodedImage getImageUrl() {

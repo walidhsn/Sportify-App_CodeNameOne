@@ -111,7 +111,7 @@ public class AcademyService {
     }
     
     public boolean addAcademy(Academy a) {
-        String url = baseUrl + "add?name=" + a.getName()+ "&category=" + a.getCategory();
+        String url = baseUrl + "add?name=" + a.getName()+ "&category=" + a.getCategory() + "&created_by=" + "front";
         req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -136,6 +136,15 @@ public class AcademyService {
 
         return result;
     }
+    
+    public Academy getAcademyByName(String name) {
+    for (Academy academy : academies) {
+        if (academy.getName().equals(name)) {
+            return academy;
+        }
+    }
+    return null;
+}
 
 //           
 //    public boolean updateEquipment(equipment eq) {

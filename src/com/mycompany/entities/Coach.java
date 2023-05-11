@@ -15,6 +15,7 @@ public class Coach {
     private String email;
     private String phone;
     private String academy_name;
+    private String created_by;
 
     public Coach() {
     }
@@ -35,11 +36,11 @@ public class Coach {
 //        this.academy = academy;
 //    }
 
-    public Coach(String name, String email, String phone, String academy_name) {
+    public Coach(String name, String email, String phone, String created_by) {
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.academy_name = academy_name;
+        this.created_by = created_by;
     }
     
     public Coach(String name, String email, String phone) {
@@ -92,6 +93,14 @@ public class Coach {
 
     public void setAcademyName(String academy_name) {
         this.academy_name = academy_name;
+    }
+
+    public String getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(String created_by) {
+        this.created_by = created_by;
     }
     
 //    public Academy getAcademy() {
